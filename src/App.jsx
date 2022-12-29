@@ -4,6 +4,7 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
 import { Header } from './components/Header';
 import { DailyForecast } from './components/DailyForecast';
+import { WeeklyForecast } from './components/WeeklyForecast';
 
 const queryClient = new QueryClient();
 
@@ -15,6 +16,7 @@ export const App = () => {
       <div className="flex flex-col justify-center mx-auto w-3/5">
         <Header onChange={setCity} city={city} />
         <DailyForecast cityName={city} />
+        <WeeklyForecast cityName={city} />
         <ReactQueryDevtools initialIsOpen={false} />
       </div>
     </QueryClientProvider>
