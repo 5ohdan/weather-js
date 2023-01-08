@@ -17,7 +17,5 @@ export const getWeeklyForecast = async (cityName) => {
         import.meta.env.VITE_API_KEY
       }&units=metric`
     )
-    .then((response) => {
-      return response.data;
-    });
+    .then((response) => response.data);
 };
