@@ -62,7 +62,6 @@ export const WeeklyForecast = ({ cityName }) => {
     }
     return arr;
   }, [cityName, data, isFetching]);
-  console.log(everyDay);
 
   if (error) {
     return <h1>Something was wrong</h1>;
