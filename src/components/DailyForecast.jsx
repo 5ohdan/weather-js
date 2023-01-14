@@ -9,31 +9,54 @@ import Sunny from '../assets/weather-conditions/sunny.svg';
 
 const AdditionalInfo = ({ data }) => {
   const {
-    main: { humidity, pressure },
+    main: { humidity, pressure, feels_like },
     wind: { speed },
   } = data;
   return (
-    <div className="bg-gradient-to-r opacity-60 from-morning-blue to-peach backdrop-opacity-40 min-w-full h-max rounded-b-2xl py-4 px-7">
-      <div className="flex justify-between w-2/3">
-        <span className="flex gap-2">
-          <img src={Humidity} />
-          <span className="flex">{humidity}%</span>
-        </span>
-        <span className="flex gap-2">
-          <img src={Pressure} />
-          <span className="flex">{pressure} mmHg</span>
-        </span>
-        <span className="flex gap-2">
-          <img src={Wind} />
-          <span className="flex">{speed} m/s</span>
-        </span>
+    <>
+      {/* <div className="flex bg-gradient-to-r opacity-60 from-morning-blue to-peach backdrop-opacity-40 min-w-full h-max rounded-b-2xl">
+        <div className="p-3">
+          <span className="font-bold">{feels_like.toFixed(0)}</span>
+          <span className=""> feels like</span>
+        </div>
+
+        <div className="flex justify-between w-2/3">
+          <span className="flex gap-2">
+            <img src={Humidity} />
+            <span className="flex">{humidity}%</span>
+          </span>
+          <span className="flex gap-2">
+            <img src={Pressure} />
+            <span className="flex">{pressure} mmHg</span>
+          </span>
+          <span className="flex gap-2">
+            <img src={Wind} />
+            <span className="flex">{speed} m/s</span>
+          </span>
+        </div>
+      </div> */}
+
+      <div className="bg-gradient-to-r opacity-60 from-morning-blue to-peach backdrop-opacity-40 min-w-full h-max rounded-b-2xl py-4 px-7">
+        <div className="flex justify-between w-2/3">
+          <span className="flex gap-2">
+            <img src={Humidity} />
+            <span className="flex">{humidity}%</span>
+          </span>
+          <span className="flex gap-2">
+            <img src={Pressure} />
+            <span className="flex">{pressure} mmHg</span>
+          </span>
+          <span className="flex gap-2">
+            <img src={Wind} />
+            <span className="flex">{speed} m/s</span>
+          </span>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
 const MainInfo = ({ data }) => {
-  console.log(data);
   const {
     main: { temp, feels_like },
     weather,
